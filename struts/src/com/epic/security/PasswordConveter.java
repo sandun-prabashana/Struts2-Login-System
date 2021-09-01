@@ -9,4 +9,10 @@ public class PasswordConveter{
         return encdata;
     }
 
+    public static String decryptPassword(String password) throws Exception{
+        AES aes = new AES("gtevdywoap12gryd");
+        String decrypt =aes.decrypt(password);
+        return decrypt;
+    }
+
 }

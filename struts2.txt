@@ -1,0 +1,11 @@
+create database struts2;
+
+use struts2;
+
+create table user(
+id int NOT NULL AUTO_INCREMENT,
+user_name varchar(20),
+email_address varchar(30),
+password varchar(50),
+PRIMARY KEY(id )
+);

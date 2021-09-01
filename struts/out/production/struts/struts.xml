@@ -1,18 +1,36 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts
-Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
 
+
     <include file="signup.xml"></include>
+
+
 
     <package name="default" namespace="/" extends="struts-default">
 
         <action name="login" class="com.epic.action.SignInAction">
-            <result name="success">/success.jsp</result>
-            <result name="error">/error.jsp</result>
+            <result name="success">/data.jsp</result>
+            <result name="error">/index.jsp</result>
+        </action>
+        <action name="loadData" class="com.epic.action.ReportAction" method="loadData">
+            <result name="success"></result>
         </action>
 
     </package>
 
+
+    <package name="json" extends="json-default">
+        <action name="deleteuser" class="com.epic.action.DeleteAction">
+            <result name="DELETE" type="json"></result>
+        </action>
+        <action name="updateuser" class="com.epic.action.UpdateAction">
+            <result name="DELETE" type="json"></result>
+        </action>
+    </package>
+
 </struts>
+
